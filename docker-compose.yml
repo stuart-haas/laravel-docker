@@ -1,0 +1,50 @@
+version: '3.7'
+services:
+  nginx:
+    container_name: laravel_invoice_nginx
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.nginx
+    ports: 
+      - 8000:8000
+    volumes:
+      - ./:/var/www/html/
+      - ./docker/nginx:/etc/nginx/conf.d
+    networks:
+      - app
+    depends_on:
+      - app
+  app:
+    container_name: laravel_invoice_app
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./:/var/www/html/
+      - /var/www/html/vendor
+      - /var/www/html/node_modules
+      - ./docker/php/laravel.ini:/usr/local/etc/php/conf.d/laravel.ini
+    networks:
+      - app
+    depends_on:
+      - db
+    entrypoint: ./bin/entrypoint.sh
+  db:
+    container_name: laravel_invoice_db
+    image: postgres:12
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+      POSTGRES_DB: laravel_invoice_app
+    volumes:
+      - db:/var/lib/postgresql/data
+    networks:
+      - app
+volumes:
+  db:
+    driver: local
+networks:
+  app:
+    driver: bridge
