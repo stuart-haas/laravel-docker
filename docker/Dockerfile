@@ -1,8 +1,5 @@
 FROM php:8.0-fpm
 
-# Set current build user as root
-USER root
-
 # Set working directory
 WORKDIR /var/www/html
 

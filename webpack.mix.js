@@ -11,15 +11,19 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/compiled/js').vue();
+mix.js('resources/assets/js/app.js', 'public/assets/js').vue();
   
-mix.postCss('resources/css/app.css', 'public/compiled/css', 
+mix.postCss('resources/assets/css/app.css', 'public/assets/css', 
     [
       require('postcss-import'),
       require('tailwindcss'),
       require('autoprefixer'),
     ]
   );
+
+mix.browserSync({
+  proxy: "http://localhost:8000",
+});
 
 mix.webpackConfig({
   output: {
