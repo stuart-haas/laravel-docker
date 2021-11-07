@@ -11,22 +11,19 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/assets/js').vue();
-  
-mix.postCss('resources/assets/css/app.css', 'public/assets/css', 
+mix
+  .js('resources/assets/js/app.js', 'public/assets/js')
+  .vue()
+  .alias({ '@': 'resources/assets/js' })
+  .postCss('resources/assets/css/app.css', 'public/assets/css', 
     [
       require('postcss-import'),
       require('tailwindcss'),
       require('autoprefixer'),
     ]
-  );
-
-mix.browserSync({
-  proxy: "http://localhost:8000",
-});
-
-mix.webpackConfig({
-  output: {
-    chunkFilename: 'js/[name].js?id=[chunkhash]',
-  }
-})
+  )
+  .browserSync({
+    proxy: "http://localhost:8000",
+  })
+  .version()
+  .sourceMaps();
