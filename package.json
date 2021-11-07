@@ -1,6 +1,17 @@
 {
     "private": true,
     "scripts": {
+        "up": "docker-compose up",
+        "down": "docker-compose down",
+        "migrate": "docker exec laravel_invoice_app php artisan migrate",
+        "migrate:rollback": "docker exec laravel_invoice_app php artisan migrate:rollback",
+        "seed": "docker exec laravel_invoice_app php artisan db:seed",
+        "test": "docker exec laravel_invoice_app php artisan test",
+        "schedule:run": "docker exec laravel_invoice_app php artisan schedule:run",
+        "queue:listen": "docker exec laravel_invoice_app php artisan queue:listen",
+        "queue:work": "docker exec laravel_invoice_app php artisan queue:work",
+        "php:lint": "docker exec laravel_invoice_app ./vendor/bin/phpcs -s",
+        "php:fix": "docker exec laravel_invoice_app ./vendor/bin/phpcbf",
         "dev": "npm run development",
         "development": "mix",
         "watch": "mix watch",
@@ -10,9 +21,21 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@vue/compiler-sfc": "^3.2.21",
+        "autoprefixer": "^10.4.0",
         "axios": "^0.21",
-        "laravel-mix": "^6.0.6",
+        "laravel-mix": "^6.0.37",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
+        "postcss": "^8.1.14",
+        "postcss-import": "^14.0.2",
+        "tailwindcss": "^2.2.19",
+        "vue-loader": "^16.8.3",
+        "vue-template-compiler": "^2.6.14"
+    },
+    "dependencies": {
+        "@inertiajs/inertia": "^0.10.1",
+        "@inertiajs/inertia-vue3": "^0.5.2",
+        "@inertiajs/progress": "^0.2.6",
+        "vue": "^3.2.21"
     }
 }

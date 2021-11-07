@@ -11,7 +11,18 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.js('resources/js/app.js', 'public/compiled/js').vue();
+  
+mix.postCss('resources/css/app.css', 'public/compiled/css', 
+    [
+      require('postcss-import'),
+      require('tailwindcss'),
+      require('autoprefixer'),
+    ]
+  );
+
+mix.webpackConfig({
+  output: {
+    chunkFilename: 'js/[name].js?id=[chunkhash]',
+  }
+})

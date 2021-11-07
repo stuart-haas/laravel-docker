@@ -28,7 +28,6 @@ services:
       - app
     depends_on:
       - db
-    entrypoint: ./bin/entrypoint.sh
   db:
     container_name: laravel_invoice_db
     image: postgres:12
