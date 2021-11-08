@@ -575,6 +575,21 @@ video {
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
 }
 
+html, body, #app {
+  height: 100%;
+  min-height: 100%;
+}
+
+table tr td, table tr th {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+table tbody tr:nth-child(odd) {
+  --tw-bg-opacity: 1;
+  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+}
+
 .container {
   width: 100%;
 }
