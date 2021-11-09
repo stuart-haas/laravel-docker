@@ -9,7 +9,7 @@
   <body>
     <div id="app">
       <div class="flex h-full">
-        <aside class="py-8 pl-8 pr-24 bg-indigo-600">
+        <aside class="py-8 pl-8 pr-24 bg-indigo-800">
           <nav>
             <ul class="space-y-6">
               <li>
@@ -47,95 +47,98 @@
             </ul>
           </nav>
         </aside>
-        <main class="py-8 px-16 flex-1">
-          <header class="flex items-center justify-between">
-            <h1 class="text-2xl font-semibold text-gray-800">Dashboard</h1>
+        <div class="flex-1">
+          <header class="flex items-center justify-between px-16 py-8 shadow">
             <div>
-              <div class="text-gray-800">
-                <span class="font-semibold mr-2">Hello, User</span>
-                <a class="rounded-full border border-gray-800 p-1 shadow">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block align-text-top" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </div>
+              <input type="text" placeholder="Search..." class="shadow border border-gray-200 p-2 rounded outline-none" />
+            </div>
+            <div class="text-gray-800">
+              <span class="font-semibold mr-2">Hello, User</span>
+              <a class="rounded-full border border-gray-200 p-1 shadow">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block align-text-top" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+              </a>
             </div>
           </header>
-          <section class="mt-16 grid grid-cols-3 gap-8">
-            <div class="p-8 border border-gray-200 rounded shadow">
-              <div class="flex items-center justify-between">
-                <h2 class="text-xl font-semibold text-gray-800">Invoices</h2>
-                <nav class="text-indigo-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block align-text-top" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                  </svg>
-                </nav>
+          <main class="mt-8 px-16">
+            <h1 class="text-2xl font-semibold text-gray-800">Dashboard</h1>
+            <section class="mt-8 grid grid-cols-3 gap-8">
+              <div class="p-8 border border-gray-200 rounded shadow">
+                <div class="flex items-center justify-between">
+                  <h2 class="text-xl font-semibold text-gray-800">Invoices</h2>
+                  <nav class="text-indigo-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block align-text-top" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                    </svg>
+                  </nav>
+                </div>
+                <table class="table-fixed w-full mt-4">
+                  <thead>
+                    <tr>
+                      <th align="left">Date</th>
+                      <th align="center">Client</th>
+                      <th align="right">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Jan 5, 2022</td>
+                      <td align="center">Client 1</td>
+                      <td align="right">$1,000.00</td>
+                    </tr>
+                    <tr>
+                      <td>Jan 5, 2022</td>
+                      <td align="center">Client 1</td>
+                      <td align="right">$1,000.00</td>
+                    </tr>
+                    <tr>
+                      <td>Jan 5, 2022</td>
+                      <td align="center">Client 1</td>
+                      <td align="right">$1,000.00</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <table class="table-fixed w-full mt-4">
-                <thead>
-                  <tr>
-                    <th align="left">Date</th>
-                    <th align="center">Client</th>
-                    <th align="right">Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Jan 5, 2022</td>
-                    <td align="center">Client 1</td>
-                    <td align="right">$1,000.00</td>
-                  </tr>
-                  <tr>
-                    <td>Jan 5, 2022</td>
-                    <td align="center">Client 1</td>
-                    <td align="right">$1,000.00</td>
-                  </tr>
-                  <tr>
-                    <td>Jan 5, 2022</td>
-                    <td align="center">Client 1</td>
-                    <td align="right">$1,000.00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="p-8 border border-gray-200 rounded shadow">
-              <div class="flex items-center justify-between">
-                <h2 class="text-xl font-semibold text-gray-800">Payments</h2>
-                <nav class="text-indigo-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block align-text-top" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                  </svg>
-                </nav>
+              <div class="p-8 border border-gray-200 rounded shadow">
+                <div class="flex items-center justify-between">
+                  <h2 class="text-xl font-semibold text-gray-800">Payments</h2>
+                  <nav class="text-indigo-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block align-text-top" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                    </svg>
+                  </nav>
+                </div>
+                <table class="table-fixed w-full mt-4">
+                  <thead>
+                    <tr>
+                      <th align="left">Date</th>
+                      <th align="center">Client</th>
+                      <th align="right">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Jan 5, 2022</td>
+                      <td align="center">Client 1</td>
+                      <td align="right">$1,000.00</td>
+                    </tr>
+                    <tr>
+                      <td>Jan 5, 2022</td>
+                      <td align="center">Client 1</td>
+                      <td align="right">$1,000.00</td>
+                    </tr>
+                    <tr>
+                      <td>Jan 5, 2022</td>
+                      <td align="center">Client 1</td>
+                      <td align="right">$1,000.00</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <table class="table-fixed w-full mt-4">
-                <thead>
-                  <tr>
-                    <th align="left">Date</th>
-                    <th align="center">Client</th>
-                    <th align="right">Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Jan 5, 2022</td>
-                    <td align="center">Client 1</td>
-                    <td align="right">$1,000.00</td>
-                  </tr>
-                  <tr>
-                    <td>Jan 5, 2022</td>
-                    <td align="center">Client 1</td>
-                    <td align="right">$1,000.00</td>
-                  </tr>
-                  <tr>
-                    <td>Jan 5, 2022</td>
-                    <td align="center">Client 1</td>
-                    <td align="right">$1,000.00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-        </main>
+            </section>
+          </main>
+        </div>
       </div>
     </div>
   </body>

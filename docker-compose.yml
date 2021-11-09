@@ -23,7 +23,7 @@ services:
       - ./:/var/www/html
       - /var/www/html/vendor
       - /var/www/html/node_modules
-      - ./docker/php/default.ini:/usr/local/etc/php/conf.d/default.ini
+      - ./docker/php/user.ini:/usr/local/etc/php/conf.d/user.ini
     networks:
       - app
     depends_on:
